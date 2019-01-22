@@ -1,0 +1,9 @@
+body {
+    background-image: url(/assets/img/background.svg);
+    background-size: 100%;
+    text-align: center;
+}
+
+.jumbotron {
+    margin: 15px;
+}

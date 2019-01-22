@@ -2,6 +2,11 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
+var mongoose = require("mongoose");
+
+// Connect to MongoDB
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytimesheadlines";
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Instantiate app
 const app = express();

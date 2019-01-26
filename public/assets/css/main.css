@@ -4,6 +4,26 @@ body {
     text-align: center;
 }
 
+img {
+    margin-bottom: 10px;
+}
+
+a {
+    color: black;
+}
+
 .jumbotron {
-    margin: 15px;
+    margin-bottom: 15px;
+    background-image: url(/assets/img/jumbotron.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 0px;
+}
+
+.card-columns {
+    column-count: 2;
+}
+
+#clear-btn {
+    margin-bottom: 15px;
 }

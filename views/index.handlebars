@@ -1,13 +1,17 @@
 {{> navbar }}
 
-<div class="container">
-    <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-            featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-
-        <a class="btn btn-success btn-lg" href="#" role="button">Scape New Articles</a>
-    </div>
+<div class="jumbotron">
+    <div style="height: 150px"></div>
+    <a class="btn btn-info btn-lg text-white" id="scrape-btn" role="button">Scrape New Articles</a>
+    <br>
 </div>
+
+<div class="container">
+    <div id="articles" class="card-columns"></div>
+</div>
+
+{{> modal id="saveSuccess" message="Article has been saved!"}}
+{{> modal id="saveFail" message="Failed to save article!"}}
+
+{{> jquery }}
+<script src="/assets/js/scrape.js"></script>

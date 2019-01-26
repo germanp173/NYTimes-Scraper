@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 var mongoose = require("mongoose");
 
 // Connect to MongoDB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytimesheadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/technews";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Instantiate app
@@ -47,7 +47,7 @@ app.use(function(err, req, res, next) {
     res.render('error', {
       message: err.message,
       error: err
-    })
+    });
   });
 
 // Start server

@@ -8,4 +8,10 @@ router.get('/', application_controller.index);
 
 router.get('/saved', application_controller.saved);
 
+router.get('/scrape', application_controller.scrape);
+
+router.post('/save', application_controller.save);
+
+router.delete('/clear', application_controller.clear);
+
 module.exports = router;

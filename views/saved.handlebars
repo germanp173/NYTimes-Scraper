@@ -1,4 +1,28 @@
 {{> navbar }}
 <div class='container'>
-    <h2>This is the page where all of my saved articles reside!</h2>
+    <br>
+    <a class="btn btn-danger btn-lg text-white" role="button" id="clear-btn">Clear Articles</a>
+
+    <div class="card-columns">
+        {{#if error}}
+            <h1>ERROR: {{error}}</h1>
+        {{else}}
+            {{#each articles}}
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">
+                            <a target="_blank" href="{{link}}">{{headline}}</a>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{content}}</p>
+                        <img src="{{imageUrl}}" alt="Image">
+                    </div>
+                </div>
+            {{/each}}
+        {{/if}}
+    </div>
 </div>
+
+{{> jquery }}
+<script src="/assets/js/savedArticles.js"></script>

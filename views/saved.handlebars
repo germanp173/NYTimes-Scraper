@@ -18,11 +18,14 @@
                         <p class="card-text">{{content}}</p>
                         <img src="{{imageUrl}}" alt="Image">
                     </div>
+                    <a class="btn btn-success btn-sm text-white edit-note" id="{{_id}}" role="button">View Notes</a>
                 </div>
             {{/each}}
         {{/if}}
     </div>
 </div>
+
+{{> note-modal }}
 
 {{> jquery }}
 <script src="/assets/js/savedArticles.js"></script>

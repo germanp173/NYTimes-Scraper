@@ -35,6 +35,13 @@ exports.scrape = (req, res) => {
         .catch(error => res.json({ error }));
 }
 
+exports.article = (req, res) => {
+    db.Article.findOne({_id: req.params.id})
+        .populate("note")
+        .then(article => res.json(article))
+        .catch(error => res.json({error}));
+}
+
 exports.save = (req, res) => {
     db.Article.create(req.body)
         .then(() => res.json({result: "Success"}))
@@ -45,6 +52,17 @@ exports.clear = (req, res) => {
     db.Article.remove({})
         .then(() => res.json({result: "Success"}))
         .catch(error => res.json({error}));
+}
+
+exports.updateNote = (req, res) => {
+    db.Note.create({body: req.body.note})
+        .then(dbNote => {
+            return db.Article.findOneAndUpdate({_id: req.params.id }, { note: dbNote._id }, { new: true })
+        })
+        .then(dbArticle => {
+            res.json(dbArticle);
+        })
+        .catch(error => res.json(error));
 }
 
 function extractArticleData(article) {

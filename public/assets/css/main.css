@@ -14,7 +14,7 @@ a {
 
 .jumbotron {
     margin-bottom: 15px;
-    background-image: url(/assets/img/jumbotron.jpg);
+    background-image: url("/assets/img/jumbotron.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     border-radius: 0px;
@@ -22,6 +22,14 @@ a {
 
 .card-columns {
     column-count: 2;
+}
+
+.form-group {
+    padding: 0px 10px;
+}
+
+.edit-note {
+    margin-bottom: 5px;
 }
 
 #clear-btn {
